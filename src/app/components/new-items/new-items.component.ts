@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-2";
 
 @Component({
-  selector: 'app-hot-collections',
-  templateUrl: './hot-collections.component.html',
-  styleUrls: ['./hot-collections.component.css']
+  selector: 'app-new-items',
+  templateUrl: './new-items.component.html',
+  styleUrls: ['./new-items.component.css']
 })
-export class HotCollectionsComponent implements OnInit {
+export class NewItemsComponent implements OnInit {
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -23,7 +23,7 @@ export class HotCollectionsComponent implements OnInit {
         items: 2,
       },
       740: {
-        items: 4,
+        items: 3,
       }
     },
     nav: true,

@@ -8,13 +8,15 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { HotCollectionsComponent } from './components/hot-collections/hot-collections.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CarouselModule} from "ngx-owl-carousel-2";
+import { NewItemsComponent } from './components/new-items/new-items.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     HomepageComponent,
-    HotCollectionsComponent
+    HotCollectionsComponent,
+    NewItemsComponent
   ],
   imports: [
     CarouselModule,

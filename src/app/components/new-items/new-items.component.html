@@ -1,0 +1,82 @@
+<section id="section-items" class="no-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="text-center">
+          <h2>New Items</h2>
+          <div class="small-border bg-color-2"></div>
+        </div>
+      </div>
+
+      <owl-carousel-o class="row" [options]="customOptions">
+        <ng-template class="item" carouselSlide>
+          <ng-container *ngTemplateOutlet="newItem; context: {author: 'author-1', name: 'Netsky'}"></ng-container>
+        </ng-template>
+        <ng-template class="item" carouselSlide>
+          <ng-container *ngTemplateOutlet="newItem; context: {author: 'author-2', name: 'Chuki beats'}"></ng-container>
+        </ng-template>
+        <ng-template class="item" carouselSlide>
+          <ng-container *ngTemplateOutlet="newItem; context: {author: 'author-3', name: 'Zwangere guy'}"></ng-container>
+        </ng-template>
+        <ng-template class="item" carouselSlide>
+          <ng-container *ngTemplateOutlet="newItem; context: {author: 'author-4', name: 'Charlotte De Witte'}"></ng-container>
+        </ng-template>
+      </owl-carousel-o>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+<ng-template #newItem let-author=author let-name=name>
+  <div class="d-item item">
+    <div class="nft__item">
+      <div class="de_countdown" data-year="2022" data-month="2" data-day="16" data-hour="8"></div>
+      <div class="author_list_pp">
+        <a href="author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Monica Lucas">
+          <img class="lazy" [src]="'assets/images/author/' + author + '.jpg'" alt="">
+          <i class="fa fa-check"></i>
+        </a>
+      </div>
+      <div class="nft__item_wrap">
+        <div class="nft__item_extra">
+          <div class="nft__item_buttons">
+            <button onclick="location.href='item-details.html'">Buy Now</button>
+            <div class="nft__item_share">
+              <h4>Share</h4>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://gigaland.io" target="_blank"><i
+                class="fa fa-facebook fa-lg"></i></a>
+              <a href="https://twitter.com/intent/tweet?url=https://gigaland.io" target="_blank"><i
+                class="fa fa-twitter fa-lg"></i></a>
+              <a
+                href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site https://gigaland.io"><i
+                class="fa fa-envelope fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+        <a href="item-details.html">
+          <img src="assets/images/casette.gif" class="nft__item_preview" alt="">
+        </a>
+      </div>
+      <div class="nft__item_info">
+        <a href="item-details.html">
+          <h4>{{name}}</h4>
+        </a>
+        <div class="nft__item_click">
+          <span></span>
+        </div>
+        <div class="nft__item_price">
+          0.08 ETH<span>1/20</span>
+        </div>
+        <div class="nft__item_action">
+          <a href="#">Place a bid</a>
+        </div>
+        <div class="nft__item_like">
+          <i class="fa fa-heart"></i><span>50</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
