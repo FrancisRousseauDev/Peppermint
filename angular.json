@@ -27,6 +27,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -94,6 +95,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css",
               "src/assets/css/bootstrap.min.css",
               "src/assets/css/bootstrap-grid.min.css",
@@ -106,7 +108,9 @@
               "src/assets/css/jquery.countdown.css",
               "src/assets/css/style.css",
               "src/assets/css/colors/scheme-02.css",
-              "src/assets/css/coloring.css"
+              "src/assets/css/coloring.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css"
             ],
             "scripts": [
               "node_modules/wowjs/dist/wow.js",

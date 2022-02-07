@@ -2,3 +2,6 @@
 .background {
   background-image: url("assets/images/background/bg-shape-1-dark.jpg") !important;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
