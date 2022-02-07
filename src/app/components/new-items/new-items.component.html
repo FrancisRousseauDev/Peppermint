@@ -9,18 +9,14 @@
       </div>
 
       <owl-carousel-o class="row" [options]="customOptions">
-        <ng-template class="item" carouselSlide>
-          <ng-container *ngTemplateOutlet="newItem; context: {author: 'author-1', name: 'Netsky'}"></ng-container>
-        </ng-template>
-        <ng-template class="item" carouselSlide>
-          <ng-container *ngTemplateOutlet="newItem; context: {author: 'author-2', name: 'Chuki beats'}"></ng-container>
-        </ng-template>
-        <ng-template class="item" carouselSlide>
-          <ng-container *ngTemplateOutlet="newItem; context: {author: 'author-3', name: 'Zwangere guy'}"></ng-container>
-        </ng-template>
-        <ng-template class="item" carouselSlide>
-          <ng-container *ngTemplateOutlet="newItem; context: {author: 'author-4', name: 'Charlotte De Witte'}"></ng-container>
-        </ng-template>
+        <ng-container *ngFor="let item of famousCollection">
+          <ng-container *ngFor="let song of item.items">
+            <ng-template class="item" carouselSlide>
+              <ng-container *ngTemplateOutlet="newItem; context: {collection: item, song: song}"></ng-container>
+            </ng-template>
+          </ng-container>
+
+        </ng-container>
       </owl-carousel-o>
 
 
@@ -30,13 +26,16 @@
 
 
 
-<ng-template #newItem let-author=author let-name=name>
+<ng-template #newItem let-collection=collection let-song=song>
   <div class="d-item item">
-    <div class="nft__item">
-      <div class="de_countdown" data-year="2022" data-month="2" data-day="16" data-hour="8"></div>
+    <div class="nft__item" [ngClass]="{'selected': checkIfPlaying(song.name)}">
+      <div (click)="changePlay()" class="de_countdown">
+        <mat-icon *ngIf="!soundOn" class="icon">volume_off</mat-icon>
+        <mat-icon *ngIf="soundOn"  class="icon">volume_up</mat-icon>
+      </div>
       <div class="author_list_pp">
         <a href="author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Monica Lucas">
-          <img class="lazy" [src]="'assets/images/author/' + author + '.jpg'" alt="">
+          <img class="lazy" [src]="collection.profilePic" alt="">
           <i class="fa fa-check"></i>
         </a>
       </div>
@@ -56,13 +55,13 @@
             </div>
           </div>
         </div>
-        <a href="item-details.html">
+        <a (click)="playAudio(song)">
           <img src="assets/images/casette.gif" class="nft__item_preview" alt="">
         </a>
       </div>
       <div class="nft__item_info">
         <a href="item-details.html">
-          <h4>{{name}}</h4>
+          <h4>{{song.name}} | {{collection.name}}</h4>
         </a>
         <div class="nft__item_click">
           <span></span>

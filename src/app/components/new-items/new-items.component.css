@@ -7,3 +7,10 @@
   background-color: white;
   border-radius: 20px;
 }
+.icon {
+  vertical-align: bottom;
+}
+
+.selected {
+  border: solid 1px var(--secondary-color);
+}

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-2";
-
+import {Musician, musicians} from "../../prefilled";
 @Component({
   selector: 'app-hot-collections',
   templateUrl: './hot-collections.component.html',
   styleUrls: ['./hot-collections.component.css']
 })
 export class HotCollectionsComponent implements OnInit {
+  famousCollection: Musician[] = [];
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -31,6 +32,8 @@ export class HotCollectionsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(musicians)
+    this.famousCollection = musicians
   }
 
 }

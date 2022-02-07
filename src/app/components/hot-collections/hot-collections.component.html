@@ -7,105 +7,30 @@
           <div class="small-border bg-color-2"></div>
         </div>
       </div>
-
-      <owl-carousel-o class="row" [options]="customOptions">
-        <ng-template class="item" carouselSlide>
-          <div class="nft_coll item">
-            <div class="nft_wrap">
-              <a href="collection.html"><img src="assets/images/collections/coll-1.jpg" alt=""></a>
-            </div>
-            <div class="nft_coll_pp">
-              <a href="collection.html"><img class="pp-coll" src="assets/images/author/author-1.jpg" alt=""></a>
-              <i class="fa fa-check"></i>
-            </div>
-            <div class="nft_coll_info">
-              <a href="collection.html"><h4>Francis</h4></a>
-              <span>Universials</span>
-            </div>
-          </div>
-        </ng-template>
-
-        <ng-template class="item" carouselSlide>
-          <div class="nft_coll item">
-            <div class="nft_wrap">
-              <a href="collection.html"><img src="assets/images/collections/coll-2.jpg" alt=""></a>
-            </div>
-            <div class="nft_coll_pp">
-              <a href="collection.html"><img class="pp-coll" src="assets/images/author/author-2.jpg" alt=""></a>
-              <i class="fa fa-check"></i>
-            </div>
-            <div class="nft_coll_info">
-              <a href="collection.html"><h4>William</h4></a>
-              <span>SnowMountains</span>
-            </div>
-          </div>
-        </ng-template>
-
-        <ng-template class="item" carouselSlide>
-          <div class="nft_coll item">
-            <div class="nft_wrap">
-              <a href="collection.html"><img src="assets/images/collections/coll-3.jpg" alt=""></a>
-            </div>
-            <div class="nft_coll_pp">
-              <a href="collection.html"><img class="pp-coll" src="assets/images/author/author-3.jpg" alt=""></a>
-              <i class="fa fa-check"></i>
-            </div>
-            <div class="nft_coll_info">
-              <a href="collection.html"><h4>Omar</h4></a>
-              <span>MonaPaint</span>
-            </div>
-          </div>
-        </ng-template>
-
-        <ng-template class="item" carouselSlide>
-          <div class="nft_coll item">
-            <div class="nft_wrap">
-              <a href="collection.html"><img src="assets/images/collections/coll-4.jpg" alt=""></a>
-            </div>
-            <div class="nft_coll_pp">
-              <a href="collection.html"><img class="pp-coll" src="assets/images/author/author-4.jpg" alt=""></a>
-              <i class="fa fa-check"></i>
-            </div>
-            <div class="nft_coll_info">
-              <a href="collection.html"><h4>Marijke</h4></a>
-              <span>Zoo animals</span>
-            </div>
-          </div>
-        </ng-template>
-
+      <owl-carousel-o *ngIf="famousCollection.length > 0" class="row" [options]="customOptions">
+        <ng-container *ngFor="let item of famousCollection">
           <ng-template class="item" carouselSlide>
-            <div class="nft_coll item">
-              <div class="nft_wrap">
-                <a href="collection.html"><img src="assets/images/collections/coll-5.jpg" alt=""></a>
-              </div>
-              <div class="nft_coll_pp">
-                <a href="collection.html"><img class="pp-coll" src="assets/images/author/author-5.jpg" alt=""></a>
-                <i class="fa fa-check"></i>
-              </div>
-              <div class="nft_coll_info">
-                <a href="collection.html"><h4>Salim</h4></a>
-                <span>ERC-192</span>
-              </div>
-            </div>
+            <ng-container *ngTemplateOutlet="collection; context: {user: item}"></ng-container>
           </ng-template>
-
-            <ng-template class="item" carouselSlide>
-              <div class="nft_coll item">
-                <div class="nft_wrap">
-                  <a href="collection.html"><img src="assets/images/collections/coll-6.jpg" alt=""></a>
-                </div>
-                <div class="nft_coll_pp">
-                  <a href="collection.html"><img class="pp-coll" src="assets/images/author/author-6.jpg" alt=""></a>
-                  <i class="fa fa-check"></i>
-                </div>
-                <div class="nft_coll_info">
-                  <a href="collection.html"><h4>Tom</h4></a>
-                  <span>ERC-192</span>
-                </div>
-              </div>
-            </ng-template>
+        </ng-container>
       </owl-carousel-o>
     </div>
   </div>
 </section>
 
+<ng-template #collection let-user=user>
+
+    <div class="nft_coll item">
+      <div class="nft_wrap">
+        <a href="collection.html"><img [src]="user.banner" alt=""></a>
+      </div>
+      <div class="nft_coll_pp">
+        <a href="collection.html"><img class="pp-coll" [src]="user.profilePic" alt=""></a>
+        <i class="fa fa-check"></i>
+      </div>
+      <div class="nft_coll_info">
+        <a href="collection.html"><h4>{{user.name}}</h4></a>
+        <span>ERC-192</span>
+      </div>
+    </div>
+</ng-template>
