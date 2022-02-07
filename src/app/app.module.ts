@@ -9,6 +9,8 @@ import { HotCollectionsComponent } from './components/hot-collections/hot-collec
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CarouselModule} from "ngx-owl-carousel-2";
 import { NewItemsComponent } from './components/new-items/new-items.component';
+import { BrowseComponent } from './components/browse/browse.component';
+import { FootComponent } from './components/foot/foot.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { NewItemsComponent } from './components/new-items/new-items.component';
     ToolbarComponent,
     HomepageComponent,
     HotCollectionsComponent,
-    NewItemsComponent
+    NewItemsComponent,
+    BrowseComponent,
+    FootComponent
   ],
   imports: [
     CarouselModule,
