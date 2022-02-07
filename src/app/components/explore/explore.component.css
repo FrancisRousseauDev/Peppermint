@@ -1,0 +1,15 @@
+.backgroundImage {
+  background-image: url("src/assets/images/background/subheader.jpg");
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+::ng-deep .peppermint {
+  color: white!important;
+}
+::ng-deep .header-light #mainmenu>li>a {
+  color: white;
+}
+::ng-deep .header-light #quick_search {
+  color: #ffffff;
+}

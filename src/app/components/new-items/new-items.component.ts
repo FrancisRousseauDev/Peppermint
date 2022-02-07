@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-2";
 import {Musician, musicians, Song} from "../../prefilled";
 
@@ -9,6 +9,7 @@ import {Musician, musicians, Song} from "../../prefilled";
 })
 export class NewItemsComponent implements OnInit {
   soundOn = true;
+  paused = false;
   audio = new Audio()
   playing: string = ''
   famousCollection: Musician[] = [];
@@ -33,7 +34,9 @@ export class NewItemsComponent implements OnInit {
     },
     nav: true,
   };
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.famousCollection = musicians
@@ -61,16 +64,32 @@ export class NewItemsComponent implements OnInit {
 
   }
 
-  changePlay() {
-    if (this.soundOn) {
+  changePlay(song?: Song) {
+    this.paused = !this.paused
+    if (!this.soundOn) return;
+
+    if (this.playing === song?.name) {
+      if (this.paused) {
+        this.playing = song?.name;
+        this.audio.load();
+        this.audio.play();
+      } else {
+        this.playing = '';
+        this.audio.pause();
+        this.audio.currentTime = 0;
+      }
+    } else if (this.playing !== song?.name) {
+      this.playing = song?.name || ''
       this.audio.pause();
       this.audio.src = '';
       this.audio.currentTime = 0;
-      this.soundOn = !this.soundOn;
-    } else {
-      this.soundOn = !this.soundOn;
-      this.playAudio()
+      this.audio = new Audio();
+      this.audio.src = song?.trackUri || '';
+      this.audio.currentTime = 0;
+      this.audio.load();
+      this.audio.play();
     }
+
   }
 
   checkIfPlaying(name: string) {

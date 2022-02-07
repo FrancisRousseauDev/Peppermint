@@ -38,11 +38,11 @@
         </a>
       </div>
       <div class="nft__item_wrap">
-        <div class="nft_type_wrap" (click)="playAudio(song)">
+        <div class="nft_type_wrap" (click)="changePlay(song)">
           <div class="player-container" *ngIf="checkIfPlaying(song.name)">
             <div class="play-pause pause"></div>
           </div>
-          <div class="player-container" *ngIf="!checkIfPlaying(song.name)">
+          <div  class="player-container" *ngIf="!checkIfPlaying(song.name)">
             <div class="play-pause"></div>
           </div>
           <div class="circle-ripple" [ngClass]="{'show': checkIfPlaying(song.name)}"></div>
