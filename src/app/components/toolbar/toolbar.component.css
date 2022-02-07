@@ -5,3 +5,22 @@
   font-weight: 600;
   font-size: 19px;
 }
+@media only screen and (max-width: 992px){
+  #mainmenu {
+    display: none;
+  }
+}
+::ng-deep .cdk-overlay-container {
+  height: 100%!important;
+  position: absolute!important;
+  top: 63px!important;
+  right: 31px!important;
+}
+::ng-deep .mat-menu-panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.sub {
+  vertical-align: sub;
+}

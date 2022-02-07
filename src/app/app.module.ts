@@ -13,6 +13,7 @@ import { BrowseComponent } from './components/browse/browse.component';
 import { FootComponent } from './components/foot/foot.component';
 import {MatIconModule} from "@angular/material/icon";
 import { ExploreComponent } from './components/explore/explore.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ExploreComponent } from './components/explore/explore.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

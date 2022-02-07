@@ -13,3 +13,9 @@
 ::ng-deep .header-light #quick_search {
   color: #ffffff;
 }
+.show {
+  display: block;
+}
+.selected {
+  border: solid 1px var(--secondary-color);
+}

@@ -30,8 +30,12 @@
                 </li>
               </ul>
               <div class="menu_side_area">
-                <a href="wallet.html" class="btn-main btn-wallet"><i class="icon_wallet_alt"></i><span>Connect Wallet</span></a>
-                <span id="menu-btn"></span>
+                <a href="wallet.html" class="btn-main btn-wallet sub"><i class="icon_wallet_alt"></i><span>Connect Wallet</span></a>
+                <button id="menu-btn" [matMenuTriggerFor]="menu"></button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>Home</button>
+                  <button mat-menu-item>Explore</button>
+                </mat-menu>
               </div>
             </div>
           </div>
