@@ -11,6 +11,8 @@ import {CarouselModule} from "ngx-owl-carousel-2";
 import { NewItemsComponent } from './components/new-items/new-items.component';
 import { BrowseComponent } from './components/browse/browse.component';
 import { FootComponent } from './components/foot/foot.component';
+import {MatIconModule} from "@angular/material/icon";
+import { ExploreComponent } from './components/explore/explore.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,15 @@ import { FootComponent } from './components/foot/foot.component';
     HotCollectionsComponent,
     NewItemsComponent,
     BrowseComponent,
-    FootComponent
+    FootComponent,
+    ExploreComponent
   ],
   imports: [
     CarouselModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

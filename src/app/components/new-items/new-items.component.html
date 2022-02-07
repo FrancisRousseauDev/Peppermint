@@ -29,10 +29,8 @@
 <ng-template #newItem let-collection=collection let-song=song>
   <div class="d-item item">
     <div class="nft__item" [ngClass]="{'selected': checkIfPlaying(song.name)}">
-      <div (click)="changePlay()" class="de_countdown">
-        <mat-icon *ngIf="!soundOn" class="icon">volume_off</mat-icon>
-        <mat-icon *ngIf="soundOn"  class="icon">volume_up</mat-icon>
-      </div>
+      <!--<div class="de_countdown">
+      </div>-->
       <div class="author_list_pp">
         <a href="author.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Creator: Monica Lucas">
           <img class="lazy" [src]="collection.profilePic" alt="">
@@ -40,22 +38,16 @@
         </a>
       </div>
       <div class="nft__item_wrap">
-        <div class="nft__item_extra">
-          <div class="nft__item_buttons">
-            <button onclick="location.href='item-details.html'">Buy Now</button>
-            <div class="nft__item_share">
-              <h4>Share</h4>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://gigaland.io" target="_blank"><i
-                class="fa fa-facebook fa-lg"></i></a>
-              <a href="https://twitter.com/intent/tweet?url=https://gigaland.io" target="_blank"><i
-                class="fa fa-twitter fa-lg"></i></a>
-              <a
-                href="mailto:?subject=I wanted you to see this site&amp;body=Check out this site https://gigaland.io"><i
-                class="fa fa-envelope fa-lg"></i></a>
-            </div>
+        <div class="nft_type_wrap" (click)="playAudio(song)">
+          <div class="player-container" *ngIf="checkIfPlaying(song.name)">
+            <div class="play-pause pause"></div>
           </div>
+          <div class="player-container" *ngIf="!checkIfPlaying(song.name)">
+            <div class="play-pause"></div>
+          </div>
+          <div class="circle-ripple" [ngClass]="{'show': checkIfPlaying(song.name)}"></div>
         </div>
-        <a (click)="playAudio(song)">
+        <a>
           <img src="assets/images/casette.gif" class="nft__item_preview" alt="">
         </a>
       </div>
