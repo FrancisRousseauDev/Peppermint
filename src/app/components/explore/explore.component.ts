@@ -18,12 +18,12 @@ export class ExploreComponent implements OnInit {
 
   search(value: string) {
     console.log(value, this.famousCollection)
+    this.famousCollection = musicians
     this.famousCollection = musicians.filter(x => {
       if (x.name.toLowerCase().includes(value.toLowerCase())) {
-        return x.name.includes(value)
+        return true;
       } else if (x.items.find(x => x.name.toLowerCase().includes(value.toLowerCase()))) {
-        const artist = x.items.filter(x => x.name.toLowerCase().includes(value.toLowerCase()))
-        x.items = artist;
+        x.items = x.items.filter(x => x.name.toLowerCase().includes(value.toLowerCase()));
         return true;
       } else {
         return false
