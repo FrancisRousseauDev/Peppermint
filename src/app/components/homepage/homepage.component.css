@@ -1,4 +1,5 @@
 .image1 {
   background-image: url("src/assets/images/background/bg-shape-1.jpg");
   background-repeat: no-repeat;
+  background-position: top right;
 }
