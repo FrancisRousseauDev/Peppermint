@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'peppermint2';
+
+
+  constructor() {
+    //this.wowService.init();
+  }
 }

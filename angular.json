@@ -94,9 +94,24 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/bootstrap-grid.min.css",
+              "src/assets/css/bootstrap-reboot.min.css",
+              "src/assets/css/animate.css",
+              "src/assets/css/owl.carousel.css",
+              "src/assets/css/owl.theme.css",
+              "src/assets/css/owl.transitions.css",
+              "src/assets/css/magnific-popup.css",
+              "src/assets/css/jquery.countdown.css",
+              "src/assets/css/style.css",
+              "src/assets/css/colors/scheme-02.css",
+              "src/assets/css/coloring.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/wowjs/dist/wow.js",
+              "../node_modules/wowjs/dist/wow.min.js"
+            ]
           }
         }
       }
