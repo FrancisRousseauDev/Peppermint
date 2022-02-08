@@ -14,7 +14,11 @@ export class ToolbarService {
     if (value) {
       this.darkTheme = value;
     } else {
-      this.darkTheme = !this.darkTheme;
+      if (value === undefined) {
+        this.darkTheme = !this.darkTheme;
+      } else {
+        this.darkTheme = false
+      }
     }
     console.log('changed theme', this.darkTheme)
     this.$changeTheme.next(this.darkTheme);

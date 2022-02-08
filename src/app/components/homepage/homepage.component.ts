@@ -11,6 +11,7 @@ export class HomepageComponent implements OnInit {
   constructor(private toolbarService: ToolbarService) { }
 
   ngOnInit(): void {
+
     this.toolbarService.changeTheme(false);
   }
 

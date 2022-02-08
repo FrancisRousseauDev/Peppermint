@@ -111,8 +111,8 @@
           <img [src]="checkIfPlaying(song.name) ? 'assets/images/casette.gif' : 'assets/images/casette_static.png'"  class="nft__item_preview" alt="">
         </a>
       </div>
-      <div class="nft__item_info">
-        <a href="item-details.html">
+      <div class="nft__item_info" (click)="goToDetail(song)">
+        <a>
           <h4>{{song.name}} | {{user.name}}</h4>
         </a>
         <div class="nft__item_click">

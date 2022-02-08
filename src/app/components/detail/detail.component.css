@@ -1,0 +1,5 @@
+.backgroundImage {
+  background-image: url("src/assets/images/background/subheader.jpg");
+  background-repeat: no-repeat;
+  background-position: top right;
+}

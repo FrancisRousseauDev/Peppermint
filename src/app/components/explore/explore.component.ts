@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Musician, musicians, Song} from "../../prefilled";
 import {ToolbarService} from "../../services/toolbar.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-explore',
@@ -14,7 +15,7 @@ export class ExploreComponent implements OnInit {
   audio = new Audio()
   playing: string = ''
 
-  constructor(private toolbarService: ToolbarService) {
+  constructor(private toolbarService: ToolbarService, private router: Router) {
   }
 
   search(value: string) {
@@ -31,6 +32,11 @@ export class ExploreComponent implements OnInit {
 
     })
 
+  }
+
+  goToDetail(song: Song) {
+    this.toolbarService.changeTheme(false);
+    this.router.navigate(['detail/' + song.name])
   }
 
   ngOnInit(): void {

@@ -14,7 +14,6 @@ export class ToolbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.toolbarService.$changeTheme.subscribe(x => {
-      console.log(x);
       this.darkTheme = x;
     })
   }

@@ -1,0 +1,165 @@
+<div id="wrapper">
+  <div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+
+    <section aria-label="section" class="mt90 sm-mt-0">
+
+      <div class="container">
+        <a routerLink="../../explore" class="btn-main btn-lg" data-bs-toggle="modal" data-bs-target="#buy_now">
+          <
+        </a><br><br>
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <img src="assets/images/casette.gif" class="img-fluid img-rounded mb30" alt="">
+
+            <audio class="audio-control" controls controlsList="nodownload">
+              <source [src]="currentSong?.trackUri" type="audio/mp3">
+            </audio>
+
+          </div>
+          <div class="col-md-6">
+            <div class="item_info">
+              Auctions ends in
+              <div class="de_countdown" data-year="2022" data-month="2" data-day="16" data-hour="8"></div>
+              <h2>{{currentSong?.name}}</h2>
+              <div class="item_info_counts">
+                <div class="item_info_type"><i class="fa fa-image"></i>Art</div>
+                <div class="item_info_views"><i class="fa fa-eye"></i>250</div>
+                <div class="item_info_like"><i class="fa fa-heart"></i>18</div>
+              </div>
+              <p>A cool description of {{currentMusician?.name}} the song you've created, and that all people can look at :)</p>
+
+              <div class="d-flex flex-row">
+                <div class="mr40">
+                  <h6>Creator</h6>
+                  <div class="item_author">
+                    <div class="author_list_pp">
+                      <a href="author.html">
+                        <img class="lazy" [src]="currentMusician?.profilePic" alt="">
+                        <i class="fa fa-check"></i>
+                      </a>
+                    </div>
+                    <div class="author_list_info">
+                      <a href="author.html">{{currentMusician?.name}}</a>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h6>Collection</h6>
+                  <div class="item_author">
+                    <div class="author_list_pp">
+                      <a href="collection.html">
+                        <img class="lazy" src="assets/images/collections/coll-thumbnail-2.jpg" alt="">
+                        <i class="fa fa-check"></i>
+                      </a>
+                    </div>
+                    <div class="author_list_info">
+                      <a href="collection.html">TheFunkyMusic</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="spacer-40"></div>
+
+              <h6>Price</h6>
+              <div class="nft-item-price"><img src="assets/images/misc/ethereum.svg" alt=""><span>0.059</span>($253.67)
+              </div>
+
+              <!-- Button trigger modal -->
+              <a href="#" class="btn-main btn-lg" data-bs-toggle="modal" data-bs-target="#buy_now">
+                Buy Now
+              </a>
+              &nbsp;
+              <a href="#" class="btn-main btn-lg btn-light" data-bs-toggle="modal" data-bs-target="#place_a_bid">
+                Place a Bid
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+  </div>
+  <!-- content close -->
+
+  <!-- buy now -->
+  <div class="modal fade" id="buy_now" tabindex="-1" aria-labelledby="buy_now" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered de-modal">
+      <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-body">
+          <div class="p-3 form-border">
+            <h3>Checkout</h3>
+            You are about to purchase a <b>Cig Swaag</b> from <b>Monica Lucas</b>
+            <div class="spacer-single"></div>
+            <h6>Enter quantity. <span class="id-color-2">10 available</span></h6>
+            <input type="text" name="buy_now_qty" id="buy_now_qty" class="form-control" value="1"/>
+            <div class="spacer-single"></div>
+            <div class="de-flex">
+              <div>Your balance</div>
+              <div><b>10.67856 ETH</b></div>
+            </div>
+            <div class="de-flex">
+              <div>Service fee 2.5%</div>
+              <div><b>0.00325 ETH</b></div>
+            </div>
+            <div class="de-flex">
+              <div>You will pay</div>
+              <div><b>0.013325 ETH</b></div>
+            </div>
+            <div class="spacer-single"></div>
+            <a href="wallet.html" target="_blank" class="btn-main btn-fullwidth">Add funds</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- place a bid -->
+  <div class="modal fade" id="place_a_bid" tabindex="-1" aria-labelledby="place_a_bid" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered de-modal">
+      <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-body">
+          <div class="p-3 form-border">
+            <h3>Place a Bid</h3>
+            You are about to place a bid for <b>Cig Swaag</b> from <b>Monica Lucas</b>
+            <div class="spacer-single"></div>
+            <h6>Your bid (ETH)</h6>
+            <input type="text" name="bid_value" id="bid_value" class="form-control" placeholder="Enter bid"/>
+            <div class="spacer-single"></div>
+            <h6>Enter quantity. <span class="id-color-2">10 available</span></h6>
+            <input type="text" name="bid_qty" id="bid_qty" class="form-control" value="1"/>
+            <div class="spacer-single"></div>
+            <div class="de-flex">
+              <div>Your bidding balance</div>
+              <div><b>0.013325 ETH</b></div>
+            </div>
+            <div class="de-flex">
+              <div>Your balance</div>
+              <div><b>10.67856 ETH</b></div>
+            </div>
+            <div class="de-flex">
+              <div>Service fee 2.5%</div>
+              <div><b>0.00325 ETH</b></div>
+            </div>
+            <div class="de-flex">
+              <div>You will pay</div>
+              <div><b>0.013325 ETH</b></div>
+            </div>
+            <div class="spacer-single"></div>
+            <a href="wallet.html" target="_blank" class="btn-main btn-fullwidth">Place a bid</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" id="back-to-top"></a>
+</div>
