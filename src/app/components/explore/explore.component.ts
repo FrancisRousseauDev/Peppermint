@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Musician, musicians, Song} from "../../prefilled";
+import {ToolbarService} from "../../services/toolbar.service";
 
 @Component({
   selector: 'app-explore',
@@ -13,13 +14,12 @@ export class ExploreComponent implements OnInit {
   audio = new Audio()
   playing: string = ''
 
-  constructor() {
+  constructor(private toolbarService: ToolbarService) {
   }
 
   search(value: string) {
-    console.log(value, this.famousCollection)
-    this.famousCollection = musicians
-    this.famousCollection = musicians.filter(x => {
+    this.famousCollection = JSON.parse(JSON.stringify(musicians))
+    this.famousCollection = this.famousCollection.filter(x => {
       if (x.name.toLowerCase().includes(value.toLowerCase())) {
         return true;
       } else if (x.items.find(x => x.name.toLowerCase().includes(value.toLowerCase()))) {
@@ -34,6 +34,7 @@ export class ExploreComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.toolbarService.changeTheme(true);
     this.famousCollection = musicians
   }
 

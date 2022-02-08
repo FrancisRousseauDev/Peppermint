@@ -17,3 +17,11 @@
 .show {
   display: block;
 }
+::ng-deep .nft_type_wrap  {
+  justify-content: right;
+  bottom: 6px;
+  right: 9px;
+}
+::ng-deep .circle-ripple {
+  right: 22px;
+}

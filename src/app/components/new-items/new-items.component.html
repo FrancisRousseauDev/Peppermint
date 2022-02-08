@@ -48,7 +48,7 @@
           <div class="circle-ripple" [ngClass]="{'show': checkIfPlaying(song.name)}"></div>
         </div>
         <a>
-          <img src="assets/images/casette.gif" class="nft__item_preview" alt="">
+          <img [src]="checkIfPlaying(song.name) ? 'assets/images/casette.gif' : 'assets/images/casette_static.png'"  class="nft__item_preview" alt="">
         </a>
       </div>
       <div class="nft__item_info">

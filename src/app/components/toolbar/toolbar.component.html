@@ -1,6 +1,6 @@
 <div id="wrapper">
   <!-- header begin -->
-  <header class="transparent header-light scroll-light">
+  <header class="transparent scroll-light" [ngClass]="{'header-dark': darkTheme, 'header-light': !darkTheme}">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -10,7 +10,7 @@
                 <!-- logo begin -->
                 <div id="logo">
                   <a href="index.html">
-                   <span class="peppermint">Peppermint</span>
+                   <span [ngClass]="{'peppermint-dark': darkTheme, 'peppermint-light': !darkTheme}">Peppermint</span>
                   </a>
                 </div>
                 <!-- logo close -->
@@ -23,7 +23,7 @@
               <!-- mainmenu begin -->
               <ul id="mainmenu">
                 <li>
-                  <a href="index.html">Home<span></span></a>
+                  <a (click)="routeToMain()">Home<span></span></a>
                 </li>
                 <li>
                   <a (click)="routeToExplore()">Explore<span></span></a>

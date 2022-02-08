@@ -72,7 +72,7 @@ export class NewItemsComponent implements OnInit {
       if (this.paused) {
         this.playing = song?.name;
         this.audio.load();
-        this.audio.play();
+        this.playAudioFile();
       } else {
         this.playing = '';
         this.audio.pause();
@@ -87,9 +87,18 @@ export class NewItemsComponent implements OnInit {
       this.audio.src = song?.trackUri || '';
       this.audio.currentTime = 0;
       this.audio.load();
-      this.audio.play();
+      this.playAudioFile();
     }
 
+  }
+
+  playAudioFile() {
+    this.audio.addEventListener('ended', () => this.replay())
+    this.audio.play();
+  }
+
+  replay() {
+    return this.playAudioFile();
   }
 
   checkIfPlaying(name: string) {
