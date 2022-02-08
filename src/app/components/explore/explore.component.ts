@@ -35,6 +35,10 @@ export class ExploreComponent implements OnInit {
   }
 
   goToDetail(song: Song) {
+    this.playing = song?.name || ''
+    this.audio.pause();
+    this.audio.src = '';
+    this.audio.currentTime = 0;
     this.toolbarService.changeTheme(false);
     this.router.navigate(['detail/' + song.name])
   }

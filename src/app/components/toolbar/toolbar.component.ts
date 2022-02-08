@@ -24,4 +24,7 @@ export class ToolbarComponent implements OnInit {
   routeToMain() {
     this.router.navigate([''])
   }
+  routeToCreate() {
+    this.router.navigate(['create'])
+  }
 }

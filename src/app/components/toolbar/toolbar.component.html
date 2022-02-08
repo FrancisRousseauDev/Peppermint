@@ -28,13 +28,17 @@
                 <li>
                   <a (click)="routeToExplore()">Explore<span></span></a>
                 </li>
+                <li>
+                  <a (click)="routeToCreate()">Create<span></span></a>
+                </li>
               </ul>
               <div class="menu_side_area">
                 <a href="wallet.html" class="btn-main btn-wallet sub"><i class="icon_wallet_alt"></i><span>Connect Wallet</span></a>
                 <button id="menu-btn" [matMenuTriggerFor]="menu"></button>
                 <mat-menu #menu="matMenu">
-                  <button mat-menu-item>Home</button>
-                  <button mat-menu-item>Explore</button>
+                  <button (click)="routeToMain()" mat-menu-item>Home</button>
+                  <button (click)="routeToExplore()" mat-menu-item>Explore</button>
+                  <button (click)="routeToExplore()" mat-menu-item>Create</button>
                 </mat-menu>
               </div>
             </div>

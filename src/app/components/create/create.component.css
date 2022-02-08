@@ -1,0 +1,9 @@
+.backgroundImage {
+  background-image: url("src/assets/images/background/subheader.jpg");
+  background-repeat: repeat;
+  background-position: top right;
+}
+
+::ng-deep h5 {
+  font: 400 calc(20px * 0.83)/16px Roboto, "Helvetica Neue", sans-serif!important;
+}

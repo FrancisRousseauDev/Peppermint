@@ -15,6 +15,7 @@ import {MatIconModule} from "@angular/material/icon";
 import { ExploreComponent } from './components/explore/explore.component';
 import {MatMenuModule} from "@angular/material/menu";
 import { DetailComponent } from './components/detail/detail.component';
+import { CreateComponent } from './components/create/create.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DetailComponent } from './components/detail/detail.component';
     BrowseComponent,
     FootComponent,
     ExploreComponent,
-    DetailComponent
+    DetailComponent,
+    CreateComponent
   ],
   imports: [
     CarouselModule,
